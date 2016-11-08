@@ -13,6 +13,7 @@ import org.json.JSONException;
 import mvc.model.SmokeModel;
 import mvc.view.SmokeView;
 
+
 public class SmokeController {
 
 	private SmokeView _view;
