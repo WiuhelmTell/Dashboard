@@ -10,18 +10,17 @@ import javax.swing.event.ChangeListener;
 
 import org.json.JSONException;
 
-import mvc.model.SmokeModel;
-import mvc.view.SmokeView;
+import mvc.model.DashModel;
+import mvc.view.DashView;
 
+public class DashController {
 
-public class SmokeController {
+	private DashView _view;
+	private DashModel _model;
 
-	private SmokeView _view;
-	private SmokeModel _model;
-
-	public SmokeController(){
-		this._model = new SmokeModel();
-		this._view = new SmokeView();
+	public DashController(){
+		this._model = new DashModel();
+		this._view = new DashView();
 		startTasks();
 		addListener();
 	}

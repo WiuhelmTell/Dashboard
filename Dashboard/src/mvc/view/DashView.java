@@ -7,11 +7,11 @@ import javax.swing.SwingConstants;
 import javax.swing.event.ChangeListener;
 
 
-public class SmokeView extends JFrame{
+public class DashView extends JFrame{
 
 	private static final long serialVersionUID = 1L;
 
-	private JLabel lblUberschrift = new JLabel("Rauchmaschine V0.9");
+	private JLabel lblUberschrift = new JLabel("Grunerstrasse 2");
 	private JLabel lblSollTemperatur = new JLabel("Wert einstellen");
 	private JLabel lblIstTemperatur = new JLabel("IstTemperatur");
 	private JLabel lblUberschriftIstTemperatur = new JLabel("Ist- Temperatur:");
@@ -24,7 +24,7 @@ public class SmokeView extends JFrame{
 
 
 	
-    public SmokeView(){
+    public DashView(){
         initialize();
     }
     

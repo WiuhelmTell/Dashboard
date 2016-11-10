@@ -12,9 +12,9 @@ import java.util.Scanner;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class SmokeModel {
+public class DashModel {
 
-	public SmokeModel(){
+	public DashModel(){
 
 	}
 	

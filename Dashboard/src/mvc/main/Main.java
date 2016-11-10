@@ -1,10 +1,10 @@
 package mvc.main;
 
-import mvc.controller.SmokeController;
+import mvc.controller.DashController;
 
 public class Main {
 
-    static SmokeController controller;
+    static DashController controller;
 
     /**
      * Diese Klasse wird nur dazu benutzt alle nötigen
@@ -12,7 +12,7 @@ public class Main {
      * View anzuzeigen
      */
     public static void main(String [] args){
-        controller = new SmokeController();
+        controller = new DashController();
 
         controller.showView();
     }
