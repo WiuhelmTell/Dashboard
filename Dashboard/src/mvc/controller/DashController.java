@@ -4,6 +4,7 @@
 package mvc.controller;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -30,12 +31,12 @@ public class DashController {
 	}
 
 	private void addListener(){
-		this._view.setSollTemperaturListener(new SollTemperaturListener());
+
 	}
 
 	private void startTasks(){
-		ControllHeating heatingControll = new ControllHeating();
-		heatingControll.start();
+		GetActualValues getActualValues = new GetActualValues();
+		getActualValues.start();
 	}
 
 	
@@ -44,29 +45,21 @@ public class DashController {
 	 */
 	class SollTemperaturListener implements ChangeListener{
 		public void stateChanged(ChangeEvent e) {
-			Integer SollWert = Integer.valueOf(_view.getSollTemperatur());
-			_view.setSollTemperatur(Integer.toString(SollWert));
 
 		}
 	}
 
 	
 
-	class ControllHeating extends Thread{
+	class GetActualValues extends Thread{
 		public void run(){
-
+			
 			while(true){
+				
+				_view.setActualTemperaturs(_model.getActualTemperatureFromVZ());
+				
 				try {
-					Double actualTemp = 0.0;
-					actualTemp = _model.getTemperatureFromVZ();
-					_view.setIstTemperatur(Double.toString(actualTemp));
-					_view.setHeizungswert(_model.controllHeating(actualTemp,_view.getSollTemperatur()));
-				} catch (IOException | JSONException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				try {
-					Thread.sleep(1000);
+					Thread.sleep(10000);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
